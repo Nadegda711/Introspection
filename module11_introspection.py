@@ -3,7 +3,7 @@ def introspection_info(obj):
 
     all_attributes = dir(obj)
 
-    attributes = [attr for attr in all_attributes if callable(getattr(obj, attr)) and not attr.startswith("__")]
+    attributes = [attr for attr in all_attributes if not attr.startswith("__")]
     methods = [method for method in all_attributes if callable(getattr(obj, method)) and method.startswith("__")]
     module_name = __name__
 
